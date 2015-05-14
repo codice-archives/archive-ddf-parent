@@ -884,7 +884,8 @@
                                     <goals>
                                         <goal>attach-artifact</goal>
                                     </goals>
-                                    <configuration>
+                                                                        <configuration>
+
                                         <artifacts>
 
                                             <artifact>
@@ -922,7 +923,27 @@
                                 </execution>
                             </executions>
                         </plugin>
-                        
+                        <plugin>
+                            <groupId>com.github.sixro</groupId>
+                            <artifactId>confluence-maven-plugin</artifactId>
+                            <version>1.0.3</version>
+                            <executions>
+                                <execution>
+                                    <id>upload-to-confluence</id>
+                                    <goals>
+                                        <goal>generate</goal>
+                                        <goal>deploy</goal>
+                                    </goals>
+                                    <phase>install</phase>
+                                    <configuration>
+                                        <serverId>ddf-confluence</serverId>
+                                        <endpoint>http://tools.codice.org/wiki</endpoint>
+                                        <spaceKey>DDFTEM</spaceKey>
+                                        <parentTitle>Home</parentTitle>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
                     </plugins>
                 </pluginManagement>
             </build>
