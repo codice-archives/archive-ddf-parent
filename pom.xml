@@ -882,10 +882,8 @@
                                     <goals>
                                         <goal>attach-artifact</goal>
                                     </goals>
-                                                                        <configuration>
-
+                                    <configuration>
                                         <artifacts>
-
                                             <artifact>
                                                 <file>${project.build.directory}/docs/html/Extending.html</file>
                                                 <type>html</type>
@@ -936,6 +934,7 @@
                                     <configuration>
                                         <serverId>ddf-confluence</serverId>
                                         <endpoint>http://tools.codice.org/wiki</endpoint>
+                                        <!-- The wiki space docs will be uploaded too. Change this property on major releases -->
                                         <spaceKey>DDFTEM</spaceKey>
                                         <parentTitle>Home</parentTitle>
                                     </configuration>
