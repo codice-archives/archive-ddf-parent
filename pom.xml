@@ -690,7 +690,7 @@
         </profile>
 
         <profile>
-            <id>release</id>
+            <id>documentation</id>
             <activation>
       		<activeByDefault>true</activeByDefault>
     	    </activation>
