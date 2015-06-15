@@ -705,6 +705,11 @@
 
         <profile>
             <id>release</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/docs/assembly/bin.xml</exists>
+                </file>
+            </activation>
             <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
@@ -920,29 +925,7 @@
                                     </configuration>
                                 </execution>
                             </executions>
-                        </plugin>
-                        <plugin>
-                            <groupId>com.github.sixro</groupId>
-                            <artifactId>confluence-maven-plugin</artifactId>
-                            <version>1.0.3</version>
-                            <executions>
-                                <execution>
-                                    <id>upload-to-confluence</id>
-                                    <goals>
-                                        <goal>generate</goal>
-                                        <goal>deploy</goal>
-                                    </goals>
-                                    <phase>install</phase>
-                                    <configuration>
-                                        <serverId>ddf-confluence</serverId>
-                                        <endpoint>http://tools.codice.org/wiki</endpoint>
-                                        <!-- The wiki space docs will be uploaded too. Change this property on major releases -->
-                                        <spaceKey>DDFTEM</spaceKey>
-                                        <parentTitle>Home</parentTitle>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                        </plugin>
+                        </plugin>                        
                     </plugins>
                 </pluginManagement>
             </build>
