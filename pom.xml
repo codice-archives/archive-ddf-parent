@@ -703,6 +703,11 @@
 
         <profile>
             <id>release</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/docs/assembly/bin.xml</exists>
+                </file>
+            </activation>
             <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
@@ -884,7 +889,6 @@
                                     </goals>
                                     <configuration>
                                         <artifacts>
-
                                             <artifact>
                                                 <file>${project.build.directory}/docs/html/Extending.html</file>
                                                 <type>html</type>
@@ -919,8 +923,7 @@
                                     </configuration>
                                 </execution>
                             </executions>
-                        </plugin>
-                        
+                        </plugin>                        
                     </plugins>
                 </pluginManagement>
             </build>
