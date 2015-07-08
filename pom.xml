@@ -701,9 +701,9 @@
             <activation>
     	       <file>
                   <exists>${basedir}/src/assembly/bin.xml</exists>
-               </file> 
-	    </activation>
-		<properties>
+               </file>
+            </activation>
+            <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
                 <packaging>pom</packaging>
@@ -723,26 +723,26 @@
                     </snapshots>
                 </repository>
             </repositories>
-            <dependencies>
-                <dependency>
-                    <groupId>rubygems</groupId>
-                    <artifactId>asciidoctor-diagram</artifactId>
-                    <version>1.2.1</version>
-                    <type>gem</type>
-                    <scope>provided</scope>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>rubygems</groupId>
-                            <artifactId>asciidoctor</artifactId>
-                        </exclusion>
-                    </exclusions>
-                </dependency>
-                <dependency>
-                    <groupId>org.asciidoctor</groupId>
-                    <artifactId>asciidoctorj</artifactId>
-                    <version>1.5.2</version>
-                </dependency>
-            </dependencies>
+                <dependencies>
+                    <dependency>
+                        <groupId>rubygems</groupId>
+                        <artifactId>asciidoctor-diagram</artifactId>
+                        <version>1.2.1</version>
+                        <type>gem</type>
+                        <scope>provided</scope>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>rubygems</groupId>
+                                <artifactId>asciidoctor</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>1.5.2</version>
+                    </dependency>
+                </dependencies>
             <build>
                 <defaultGoal>process-resources</defaultGoal>
                 <pluginManagement>
@@ -920,7 +920,6 @@
                                 </execution>
                             </executions>
                         </plugin>
-                        
                     </plugins>
                 </pluginManagement>
             </build>
